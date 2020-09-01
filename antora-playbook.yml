@@ -1,0 +1,15 @@
+site:
+  title: Apache
+  url: https://felix.apache.org
+content:
+  sources:
+  - url: ./../felix-site
+
+
+ui:
+  bundle:
+    url: node_modules/@felix/felix-antora-ui/build/felix-antora-ui-bundle.zip
+    snapshot: false
+
+output:
+  clean: true
