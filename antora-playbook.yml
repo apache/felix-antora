@@ -5,6 +5,12 @@ content:
   sources:
   - url: ./../felix-site
 
+asciidoc:
+  attributes:
+    allow-uri-read: true
+  extensions:
+    - asciidoctor-kroki
+    - "@djencks/asciidoctor-antora-indexer"
 
 ui:
   bundle:
