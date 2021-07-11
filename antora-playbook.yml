@@ -3,7 +3,12 @@ site:
   url: https://felix.apache.org
 content:
   sources:
-  - url: ./../felix-site
+  - url: https://github.com/apache/felix-antora-site.git
+    branches: main
+#  - url: ./../felix-dev
+#    branches: HEAD
+#    start_paths:
+#      - scr
 
 asciidoc:
   attributes:
@@ -11,6 +16,7 @@ asciidoc:
   extensions:
     - asciidoctor-kroki
     - "@djencks/asciidoctor-antora-indexer"
+    - "@djencks/asciidoctor-jsonpath"
 
 ui:
   bundle:
