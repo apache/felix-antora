@@ -1,0 +1,8 @@
+notifications:
+  commits: site-pub@felix.apache.org
+  issues: site-pub@felix.apache.org
+  pullrequests: site-pub@felix.apache.org
+  jira_options: link label link label
+
+publish:
+  whoami: asf-site
