@@ -6,3 +6,8 @@ notifications:
 
 publish:
   whoami: asf-site
+
+#temporary
+staging:
+  profile: ~
+  whoami:  asf-staging

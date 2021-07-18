@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "scripts": {
+    "clean-build": "npm run clean-install;npm run build",
+    "clean-install": "rm -rf node_modules/ .cache/ package-lock.json;npm i --cache=.cache/npm",
+    "build": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch --clean;echo '\n#legacy cms to current' >> ./build/site/.htaccess;cat dot-htaccess-current >> ./build/site/.htaccess;echo '\n\n#legacy to git cms legacy site' >> ./build/site/.htaccess;cat dot-htaccess-legacy >> ./build/site/.htaccess;cat dot-htaccess-static >> ./build/site/.htaccess",
+    "build-htaccess": "node_modules/.bin/antora --generator @djencks/site-generator-default antora-playbook-htaccess-edit.yml --stacktrace --fetch --clean;echo '\n#legacy cms to current' >> ./build/site/.htaccess;cat dot-htaccess-current >> ./build/site/.htaccess;echo '\n\n#legacy to git cms legacy site' >> ./build/site/.htaccess;cat dot-htaccess-legacy >> ./build/site/.htaccess;cat dot-htaccess-static >> ./build/site/.htaccess"
+  },
+  "devDependencies": {
+    "@antora/cli": "^2.3.4",
+    "@antora/site-generator-default": "^2.3.4",
+    "@apache-felix/felix-antora-ui": "https://github.com/apache/felix-antora-ui.git",
+    "asciidoctor-kroki": "^0.9.2",
+    "@djencks/asciidoctor-antora-indexer": "^0.0.4",
+    "@djencks/asciidoctor-jsonpath": "^0.0.2",
+    "@djencks/antora-htaccess-edit": "file:///Users/david/projects/antora/extensions/antora-htaccess-edit",
+    "@djencks/playbook-builder": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-playbook-builder-v2.3.3.tgz",
+    "@djencks/content-aggregator": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-content-aggregator-v2.3.3.tgz",
+    "@djencks/site-generator-default": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-site-generator-default-v2.3.3.tgz"
+  }
+}

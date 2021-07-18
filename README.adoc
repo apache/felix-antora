@@ -1,0 +1,22 @@
+= Antora build for felix website
+
+== .htaccess file construction
+
+I have all the felix related git projects checked out next to one another.
+
+Base dot-htaccess-cms construction::
+This is generated in felix-site-pub last-cms branch using
+
+----
+find documentation -name "*.html"|xargs -L 1 -I % echo Redirect 301 /% https://raw.githubusercontent.com/apache/felix-site-pub/blob/last-cms/% > ../felix-antora/dot-htaccess-cms
+----
+
+Auto-editing to current page locations, and missing locations::
+This is done using the highly-experimental htaccess-edit-extension Antora extension.
+To run, copy `package.json-htaccess-edit` to `package.json` and run `npm clean-install` and `npm run build-htaccess`.
+This will generate `dot-htaccess-current` and `dot-htaccess-legacy`.
+
+Final .htaccess file assembly::
+The build will generate a base `.htaccess` file from the start page and page aliases in the .adoc source.
+Some shell commands will append `dot-htaccess-current`, `dot-htaccess-legacy`, and `dot-htaccess-static` to produce the final file.
+

@@ -1,6 +1,8 @@
 site:
-  title: Apache
+  title: Apache Felix
   url: https://felix.apache.org
+  start_page: documentation::index.adoc
+
 content:
   sources:
   - url: https://github.com/apache/felix-antora-site.git
@@ -20,10 +22,13 @@ asciidoc:
 
 ui:
   bundle:
-    url: node_modules/@felix/felix-antora-ui/build/felix-antora-ui-bundle.zip
+    url: "./node_modules/@apache-felix/felix-antora-ui/build/felix-antora-ui-bundle.zip"
     snapshot: false
   #currently .htaccess has to be copied by hand, see https://gitlab.com/antora/antora/-/issues/627 and package.json
   supplemental_files: ./supplemental-ui
+
+urls:
+  redirect_facility: httpd
 
 #output:
 #  clean: true

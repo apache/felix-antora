@@ -5,11 +5,11 @@
     "clean-install": "rm -rf node_modules/ .cache/ package-lock.json;npm i --cache=.cache/npm",
     "plain-install": "npm i --cache=.cache/npm",
     "build": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch --clean",
-    "build-noclean": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch;cp ./supplemental-ui/.htaccess ./build/site/;cp ./supplemental-ui/.asf.yaml ./build/site/"
+    "build-noclean": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch;echo '\n#legacy cms to current' >> ./build/site/.htaccess;cat dot-htaccess-current >> ./build/site/.htaccess;echo '\n\n#legacy to git cms legacy site' >> ./build/site/.htaccess;cat dot-htaccess-legacy >> ./build/site/.htaccess;cat dot-htaccess-static >> ./build/site/.htaccess"
   },
   "devDependencies": {
-    "@antora/cli": "^2.3.3",
-    "@antora/site-generator-default": "^2.3.3",
+    "@antora/cli": "^2.3.4",
+    "@antora/site-generator-default": "^2.3.4",
     "@felix/felix-antora-ui": "https://github.com/apache/felix-antora-ui.git",
     "asciidoctor-kroki": "^0.9.2",
     "@djencks/asciidoctor-antora-indexer": "^0.0.4",

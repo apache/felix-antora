@@ -1,0 +1,38 @@
+site:
+  title: Apache Felix
+  start_page: documentation::index.adoc
+content:
+  sources:
+#  For local "author mode" builds check out this aries-antora playbook project
+#  and the site project next to one another and uncomment the next two lines and comment out the other - url
+    - url: ./../felix-site
+      branches: HEAD
+# For "production" build without needing a local site checkout uncomment the next two lines and comment out the previous two.
+#  - url: https://github.com/djencks/aries-antora-site.git
+#    branches: master
+
+asciidoc:
+  extensions:
+    - "@djencks/asciidoctor-antora-indexer"
+
+ui:
+  bundle:
+    url: "./node_modules/@apache-felix/felix-antora-ui/build/felix-antora-ui-bundle.zip"
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+
+urls:
+  redirect_facility: httpd
+
+output:
+  clean: true
+
+extensions:
+  - path: "@djencks/antora-htaccess-edit"
+    config:
+      component: documentation
+      version: master
+      htaccessSource: ./dot-htaccess-cms
+      htaccessTarget: ./dot-htaccess-current
+      htaccessNotFound: ./dot-htaccess-legacy
+      sliceAt: -2

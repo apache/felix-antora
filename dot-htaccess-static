@@ -1,0 +1,17 @@
+
+#generic maven-generated content redirect
+RedirectMatch ^/apidocs/(.*)$ /documentation/_attachments/apidocs/$1
+RedirectMatch ^/ipojo/(.*)$ /documentation/_attachments/ipojo/$1
+
+#these may need updating or switching to page aliases.
+Redirect Permanent /documentation/subprojects/apache-felix-http-service.html https://github.com/apache/felix-dev/tree/master/http
+Redirect Permanent /documentation/subprojects/apache-felix-service-component-runtime.html https://github.com/apache/felix-dev/tree/master/scr
+Redirect Permanent /documentation/subprojects/apache-felix-config-admin.html https://github.com/apache/felix-dev/tree/master/configadmin
+
+Redirect Permanent /mailinglists.html /documentation/community/project-info.html#mailing-lists
+Redirect Permanent /documentation/development/issue-tracking.html /documentation/community/project-info.html
+Redirect Permanent /documentation/development/source-code.html /documentation/community/project-info.html
+Redirect Permanent /documentation/community/apache-felix-community-roles-and-processes.html /documentation/community/project-info.html
+Redirect Permanent /documentation/development/committers.html /documentation/community/project-info.html
+Redirect Permanent /documentation/development/project-management-committee-pmc.html /documentation/community/project-info.html
+Redirect Permanent /documentation/community/contributing-source-code.html /documentation/community/contributing.html
