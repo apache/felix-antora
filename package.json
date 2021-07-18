@@ -5,7 +5,7 @@
     "clean-install": "rm -rf node_modules/ .cache/ package-lock.json;npm i --cache=.cache/npm",
     "plain-install": "npm i --cache=.cache/npm",
     "build": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch --clean",
-    "build-noclean": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch;echo '\n#legacy cms to current' >> ./build/site/.htaccess;cat dot-htaccess-current >> ./build/site/.htaccess;echo '\n\n#legacy to git cms legacy site' >> ./build/site/.htaccess;cat dot-htaccess-legacy >> ./build/site/.htaccess;cat dot-htaccess-static >> ./build/site/.htaccess"
+    "build-noclean": "node_modules/.bin/antora antora-playbook.yml --stacktrace --fetch;echo '\n#legacy cms to current' >> ./build/site/.htaccess;cat dot-htaccess-current >> ./build/site/.htaccess;echo '\n\n#legacy to git cms legacy site' >> ./build/site/.htaccess;cat dot-htaccess-legacy >> ./build/site/.htaccess;cat dot-htaccess-static >> ./build/site/.htaccess;cp ./supplemental-ui/.asf.yaml ./build/site/"
   },
   "devDependencies": {
     "@antora/cli": "^2.3.4",
