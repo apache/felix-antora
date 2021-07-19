@@ -17,11 +17,7 @@ pipeline {
                     sh 'git rm -r .'
                 }
 
-                sh 'npm run clean-install'
-                sh 'ls ./node_modules/@apache-felix'
-                sh 'ls ./node_modules/@apache-felix/felix-antora-ui'
-                sh 'ls ./node_modules/@apache-felix/felix-antora-ui/build'
-                sh 'ls ./node_modules/@apache-felix/felix-antora-ui/build/felix-antora-ui-bundle.zip'
+                sh 'npm run plain-install'
                 sh 'npm run build-noclean'
 
                 dir('build/site') {
