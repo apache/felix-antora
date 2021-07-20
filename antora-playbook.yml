@@ -5,6 +5,11 @@ site:
 
 content:
   sources:
+    #  For local "author mode" builds check out this felix-antora playbook project
+    #  and the site project next to one another and uncomment the next two lines and comment out the other - url
+#    - url: ./../felix-site
+#      branches: HEAD
+    # For "production" build without needing a local site checkout uncomment the next two lines and comment out the previous two.
   - url: https://github.com/apache/felix-antora-site.git
     branches: main
 #  - url: ./../felix-dev
