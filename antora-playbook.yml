@@ -28,7 +28,7 @@ asciidoc:
 ui:
   bundle:
     url: "./node_modules/@apache-felix/felix-antora-ui/build/felix-antora-ui-bundle.zip"
-    snapshot: false
+    snapshot: true
   #currently .htaccess has to be copied by hand, see https://gitlab.com/antora/antora/-/issues/627 and package.json
   supplemental_files: ./supplemental-ui
 
