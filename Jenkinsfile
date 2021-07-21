@@ -17,7 +17,7 @@ pipeline {
                     sh 'git rm -r .'
                 }
 
-                sh 'npm run plain-install'
+                sh 'npm run clean-install'
                 sh 'npm run build-noclean'
 
                 dir('build/site') {
