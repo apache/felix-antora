@@ -1,3 +1,4 @@
+# Preview branch playbook copy
 site:
   title: Apache Felix
   url: https://felix.apache.org
@@ -10,12 +11,14 @@ content:
 #    - url: ./../felix-antora-site
 #      branches: HEAD
     # For "production" build without needing a local site checkout uncomment the next two lines and comment out the previous two.
-  - url: https://github.com/apache/felix-antora-site.git
-    branches: main
-#  - url: ./../felix-dev
-#    branches: HEAD
-#    start_paths:
-#      - scr
+#  Set up the content sources to point to what you want to preview.
+#  Most likely this will involve branches in your github forks of the felix projects.
+  - url: https://github.com/djencks/felix-antora-site.git
+    branches: scr-preview
+  - url: https://github.com/djencks/felix-dev.git
+    branches: adoc-preview
+    start_paths:
+      - scr/docs
 
 asciidoc:
   attributes:
